@@ -1,1 +1,28 @@
+Problem Link :- https://www.codechef.com/problems/TWOROLL
+Solution :
+#include <bits/stdc++.h>
 
+using namespace std;
+
+int main() {
+    // your code goes here
+    int t;
+    cin >> t;
+    while (t--) {
+        int x, y;
+        cin >> x >> y;
+        int required = 50 - x;
+        bool found = false;
+        for (int i = y; i < y + 6; i++) {
+            for (int j = y; j < y + 6; j++) {
+                if (required == i + j)
+                    found = true;
+            }
+        }
+        if (found)
+            cout << "Yes" << endl;
+        else
+            cout << "No" << endl;
+    }
+    return 0;
+}
