@@ -1,0 +1,25 @@
+Problem Link : https://www.codechef.com/problems/RATIO2
+
+Solution: 
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	int t;
+	cin>>t;
+	while(t--){
+	    int x,y,count=0;
+	    cin>>x>>y;
+	    while(x<2*y && y<2*x){
+	        if(x>y)
+	        y--;
+	        else
+	        x--;
+	        count++;
+	    }
+	    cout<<count<<endl;
+	}
+	return 0;
+
+}
