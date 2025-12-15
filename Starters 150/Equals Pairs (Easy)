@@ -1,0 +1,33 @@
+Problem Link : https://www.codechef.com/problems/MAXEQEASY?tab=ide
+
+Solution :
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    // your code goes here
+    int t;
+    cin >> t;
+    while (t--) {
+        int n;
+        cin >> n;
+        vector < int > arr(n);
+        vector < int > freq(n + 1, 0);
+        for (int i = 0; i < n; i++) {
+            cin >> arr[i];
+            freq[arr[i]]++;
+        }
+        int sum = 0, maxi = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += freq[i] * (freq[i] - 1) / 2;
+            maxi = max(maxi, freq[i]);
+        }
+        int count_0 = freq[0];
+        sum += (count_0 + maxi) * (count_0 + maxi - 1) / 2 - maxi * (maxi - 1) / 2;
+        cout << sum << endl;
+    }
+    return 0;
+
+
+}
