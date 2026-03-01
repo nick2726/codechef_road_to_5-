@@ -1,0 +1,20 @@
+https://www.codechef.com/problems/FONTA
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+void solve(string s) {
+    while (!s.empty() && string("nta").find(s.back()) != string::npos)
+        s.pop_back();
+}
+int main() {
+    // your code goes here
+    string s;
+    cin >> s;
+    solve(s);
+    cout << (s.substr(s.size() - 3) == "nta" ? "Yes" : "No") << endl;
+    return 0;
+
+}
