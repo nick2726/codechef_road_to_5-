@@ -1,0 +1,37 @@
+
+https://www.codechef.com/problems/BUYTICK?tab=statement
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main() {
+    // your code goes here
+    int t;
+    cin >> t;
+    while (t--) {
+        int n, k;
+        cin >> n >> k;
+        vector < int > arr(n);
+        for (int i = 0; i < n; i++)
+            cin >> arr[i];
+        string s;
+        cin >> s;
+        vector < int > available;
+        for (int i = 0; i < n; i++) {
+            if (s[i] == '0')
+                available.push_back(arr[i]);
+        }
+        if (available.size() < k) {
+            cout << -1 << "\n";
+            continue;
+        }
+        sort(available.begin(), available.end());
+        int total = 0;
+        for (int i = 0; i < k; i++)
+            total += available[i];
+        cout << total << "\n";
+    }
+    return 0;
+}
